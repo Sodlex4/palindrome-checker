@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Palindrome Checker</title>
+  
+  <!-- Typed.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1><span id="typed"></span></h1>
+    <input type="text" id="text-input" placeholder="Enter text" />
+    <button id="check-btn"><i class="fas fa-search"></i> Check</button>
+    <p id="result"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Typed.js initialization
+    new Typed("#typed", {
+      strings: ["Palindrome Checker", "Is it a Palindrome?", "Let's Find Out!"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true
+    });
+
+    const textInput = document.getElementById("text-input");
+const checkBtn = document.getElementById("check-btn");
+const result = document.getElementById("result");
+
+function isPalindrome(str) {
+  const cleaned = str.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+  const reversed = cleaned.split("").reverse().join("");
+  return cleaned === reversed;
+}
+
+checkBtn.addEventListener("click", () => {
+  const input = textInput.value.trim();
+
+  if (input === "") {
+    alert("Please input a value");
+    return;
+  }
+
+  const palindromeCheck = isPalindrome(input);
+  result.textContent = `${input} is ${palindromeCheck ? "" : "not "}a palindrome.`;
+});
+
+  </script>
+</body>
+</html>
