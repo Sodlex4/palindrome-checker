@@ -25,13 +25,16 @@
   <script src="script.js"></script>
   <script>
     // Typed.js initialization
-    new Typed("#typed", {
-      strings: ["Palindrome Checker", "Is it a Palindrome?", "Let's Find Out!"],
-      typeSpeed: 60,
-      backSpeed: 40,
-      backDelay: 1500,
-      loop: true
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  new Typed("#typed", {
+    strings: ["Palindrome Checker", "Is it a Palindrome?", "Let's Find Out!"],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1500,
+    loop: true
+  });
+});
+
 
     const textInput = document.getElementById("text-input");
 const checkBtn = document.getElementById("check-btn");
