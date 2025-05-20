@@ -26,13 +26,19 @@
   <script>
     // Typed.js initialization
 document.addEventListener("DOMContentLoaded", function () {
-  new Typed("#typed", {
-    strings: ["Palindrome Checker", "Is it a Palindrome?", "Let's Find Out!"],
-    typeSpeed: 60,
-    backSpeed: 40,
-    backDelay: 1500,
-    loop: true
-  });
+  // Make sure the element exists
+  const typedTarget = document.getElementById("typed");
+  if (typedTarget) {
+    new Typed("#typed", {
+      strings: ["Palindrome Checker", "Is it a Palindrome?", "Let's Find Out!"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true
+    });
+  } else {
+    console.error("#typed element not found");
+  }
 });
 
 
